@@ -4,8 +4,10 @@ list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 include_directories(${CMAKE_BINARY_DIR}/devel/include) # 引用ros生成的msg header
 
 # eigen 3
-find_package(Eigen3 REQUIRED)
-include_directories(${EIGEN3_INCLUDE_DIRS})
+#find_package(Eigen3 REQUIRED)
+# using Eigen version 3.2 to avoid segmentation fault of G2O
+SET(EIGEN3_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/Thirdparty/eigen/")
+include_directories(${EIGEN3_INCLUDE_DIR})
 
 # glog
 find_package(Glog REQUIRED)
