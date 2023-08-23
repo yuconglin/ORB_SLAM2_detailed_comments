@@ -11,6 +11,7 @@ set(HDRS_DBOW2
   DBoW2/FeatureVector.h
   DBoW2/ScoringObject.h   
   DBoW2/TemplatedVocabulary.h)
+
 set(SRCS_DBOW2
   DBoW2/BowVector.cpp
   DBoW2/FORB.cpp      
@@ -20,11 +21,12 @@ set(SRCS_DBOW2
 set(HDRS_DUTILS
   DUtils/Random.h
   DUtils/Timestamp.h)
+  
 set(SRCS_DUTILS
   DUtils/Random.cpp
   DUtils/Timestamp.cpp)
 
-find_package(OpenCV 3.0 QUIET)
+find_package(OpenCV QUIET)
 if(NOT OpenCV_FOUND)
    find_package(OpenCV 2.4.3 QUIET)
    if(NOT OpenCV_FOUND)

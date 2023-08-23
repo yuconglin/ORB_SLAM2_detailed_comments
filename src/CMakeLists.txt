@@ -24,6 +24,6 @@ target_link_libraries(${PROJECT_NAME}
   ${OpenCV_LIBS}
   ${EIGEN3_LIBS}
   ${Pangolin_LIBRARIES}
-  dbow2_libs 
-  g2o_libs
+  ${dbow2_libs} 
+  ${g2o_libs}
 )

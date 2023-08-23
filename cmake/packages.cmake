@@ -11,6 +11,14 @@ include_directories(${EIGEN3_INCLUDE_DIRS})
 find_package(Glog REQUIRED)
 include_directories(${Glog_INCLUDE_DIRS})
 
+# csparse
+find_package(CSparse REQUIRED)
+include_directories(${CSPARSE_INCLUDE_DIR})
+
+# cholmod
+find_package(Cholmod REQUIRED)
+include_directories(${CHOLMOD_INCLUDE_DIRS})
+
 # opencv
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
@@ -22,7 +30,10 @@ include_directories(${Pangolin_INCLUDE_DIRS})
 # g2o 使用Thirdparty中的
 include_directories(${PROJECT_SOURCE_DIR}/Thirdparty/g2o/)
 set(g2o_libs
-    ${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so)
+    ${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so
+    ${CSPARSE_LIBRARY}
+    ${CHOLMOD_LIBRARY}
+    )
 
 # DBoW2 in Thirdparty
 include_directories(${PROJECT_SOURCE_DIR}/Thirdparty/DBoW2/)
