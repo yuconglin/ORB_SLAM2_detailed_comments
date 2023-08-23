@@ -1,0 +1,29 @@
+add_library(${PROJECT_NAME} SHARED
+  System.cc
+  Tracking.cc
+  LocalMapping.cc
+  LoopClosing.cc
+  ORBextractor.cc
+  ORBmatcher.cc
+  FrameDrawer.cc
+  Converter.cc
+  MapPoint.cc
+  KeyFrame.cc
+  Map.cc
+  MapDrawer.cc
+  Optimizer.cc
+  PnPsolver.cc
+  Frame.cc
+  KeyFrameDatabase.cc
+  Sim3Solver.cc
+  Initializer.cc
+  Viewer.cc
+)
+
+target_link_libraries(${PROJECT_NAME}
+  ${OpenCV_LIBS}
+  ${EIGEN3_LIBS}
+  ${Pangolin_LIBRARIES}
+  dbow2_libs 
+  g2o_libs
+)
